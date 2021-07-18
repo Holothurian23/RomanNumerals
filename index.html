@@ -4,7 +4,7 @@
     function getNum()
        {
            let decimal = document.getElementById("askNum").value;
-           document.getElementById("result").innerHTML = romNum;
+           document.getElementById("result").innerHTML = decimal;
        }
     function convertToRoman(decimal) {
         let lo=0;
@@ -66,10 +66,10 @@
 </head>
 <body>
   <h1>Roman Numeral Converter</h1>
-  <p>Please enter an integer between 1 and 3999:</p>
-  <input type="text" id="askNum" placeholder="Enter Integer Between 1 and 3999: ">
+  <p>Enter an integer between 1 and 3999:</p>
+  <input type="text" id="askNum" placeholder="1000">
 
-  <button onclick="javascript:getNum()">Submit now</button>
+  <button onclick="javascript:getNum()">OK</button>
   <p id="result"></p>
 </body>
 
