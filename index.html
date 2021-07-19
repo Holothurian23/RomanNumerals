@@ -1,10 +1,16 @@
 <html>
 <head>
-  <script type="javascript/text">
+  <link href='https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap' rel='stylesheet' type='text/css'>
+  <style>
+    .romanesque{
+      font-family: "STIX Two Math";
+    }
+  </style>
+  <script>
     function getNum()
        {
-           let decimal = document.getElementById("askNum").value;
-           document.getElementById("result").innerHTML = decimal;
+           var decimal = document.getElementById("askNum").value;
+           document.getElementById("result").innerHTML = convertToRoman(decimal);
        }
     function convertToRoman(decimal) {
         let lo=0;
@@ -12,8 +18,11 @@
         let hi=0;
         let roman=0;
         let romArr=[];
-        let str=num.toString();
+        let str=decimal.toString();
         let arr=str.split('');
+        if(decimal>3999 || decimal<1){
+          return "Error: Number is Invalid!"
+        }
         for(let i=arr.length-1;i>=0;i--){
         switch(i){
         case 0:
@@ -62,15 +71,19 @@
         let romNum=romArr.join('');
          return romNum;
     }
+
+
+
   </script>
 </head>
 <body>
-  <h1>Roman Numeral Converter</h1>
-  <p>Enter an integer between 1 and 3999:</p>
-  <input type="text" id="askNum" placeholder="1000">
+  <h1 class="romanesque">Roman Numeral Converter</h1>
+  <p class="romanesque">Enter a whole number between 1 and 3999:</p>
+  <input type="text" name="deciNum" id="askNum">
 
-  <button onclick="javascript:getNum()">OK</button>
-  <p id="result"></p>
+  <button id="submit" onclick="getNum()">OK</button>
+  <br>
+  <div id="result" class="romanesque"></div>
 </body>
 
 </html>
