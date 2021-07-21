@@ -21,7 +21,9 @@
         let str=decimal.toString();
         let arr=str.split('');
         if(decimal>3999 || decimal<1){
-          return "Error: Number is Invalid!"
+          return "Error: Invalid Number!"
+        } else if (/\D/.test(decimal) == 1) {
+          return "Error: Not a Number!"
         }
         for(let i=arr.length-1;i>=0;i--){
         switch(i){
