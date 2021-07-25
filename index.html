@@ -1,10 +1,95 @@
 <html>
 <head>
-  <link href='https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css2?family=Mate&family=Mate+SC&display=swap' rel='stylesheet' type='text/css'>
   <style>
-    .romanesque{
-      font-family: "STIX Two Math";
+
+  html, body {
+    float: left;
+    background-color: #FFF;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+  }
+  .container {
+    /* min-height: 300px; */
+    height: 100%
+    width: 100%;
+    /* background: #FFF; */
+    display: grid;
+    grid-template-areas: "title title title"
+                         "form form image"
+                         "result result image";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .title-area {
+    grid-area: title;
+    height: 40%;
+  }
+  .form-area {
+    grid-area: form;
+    padding-left: 5em;
+    height: 30%;
+    padding-bottom: -1em;
+  }
+  .image-area {
+    grid-area: image;
+    height: 60%;
+  }
+  .result-area {
+    display: inline-block;
+    height: 40%;
+vertical-align: top;
+    padding-top: 0em;
+    grid-area:result;
+    padding-left: 5em;
+
+
+  }
+  .marble-area {
+    width: 80%;
+    height: 100%
+    min-height: 20em;
+    padding-bottom: 5em;
+    margin-top: -0.5em;
+    padding-top: 0em;
+    background-image:url("https://pixy.org/src2/639/thumbs350/6399960.jpg");
+  }
+
+
+    .roman-title{
+      font-family: "Mate SC";
+      margin-bottom: -0.5em;
     }
+    .roman-small{
+      font-family: "Mate";
+      font-size: 1em;
+    }
+    h1 {
+      font-family: "Mate SC";
+      font-size: 6em;
+      text-align: center;
+      margin-bottom: -0.5em;
+    }
+    h2 {
+      font-family: "Mate SC";
+      font-size: 3em;
+      text-align: center;
+      margin-top: : 0em;
+    }
+    p {
+      font-family: "Mate";
+      font-size: 1.5em;
+      text-align: left;
+      margin-top: : 0em;
+    }
+    .caesar {
+      float:right;
+      margin-left: 0.5em;
+      height: 30em;
+    }
+
   </style>
   <script>
     function getNum()
@@ -20,10 +105,9 @@
         let romArr=[];
         let str=decimal.toString();
         let arr=str.split('');
-        if(decimal>3999 || decimal<1){
-          return "Error: Invalid Number!"
-        } else if (/\D/.test(decimal) == 1) {
-          return "Error: Not a Number!"
+        //Flag any entry that isnt 1 to 3999
+        if(decimal>3999 || decimal<1 || /\D/.test(decimal) == 1){
+          return "Error!"
         }
         for(let i=arr.length-1;i>=0;i--){
         switch(i){
@@ -79,13 +163,31 @@
   </script>
 </head>
 <body>
-  <h1 class="romanesque">Roman Numeral Converter</h1>
-  <p class="romanesque">Enter a whole number between 1 and 3999:</p>
-  <input type="text" name="deciNum" id="askNum">
-
-  <button id="submit" onclick="getNum()">OK</button>
+  <div class="container">
+    <div class="title-area">
+      <h1>ASK CAESAR</h1>
+      <h2>Roman Numeral Converter</h2>
+    </div>
+    <div class="image-area">
+      <img class="caesar" src="Caesar_Asterix.jpg">
+    </div>
+    <div class="form-area">
+      <p>Enter a whole number between 1 and 3999<sup>*</sup>:</p>
+      <input type="text" name="deciNum" id="askNum" class="roman-small">
+      <button id="submit" class="roman-small" onclick="getNum()">OK</button>
+      <p>*3999 was the Romans' biggest number; <a href="https://www.unrv.com/culture/roman-numerals.php#3999" target="_blank">here</a> is the reason why!</p>
+    </div>
+    <div class="result-area">
+      <div class="marble-area">
   <br>
-  <div id="result" class="romanesque"></div>
+  <br>
+      <h1 id="result" class="roman-title">...</h1>
+
+<br>
+<br>
+      </div>
+   </div>
+ </div>
 </body>
 
 </html>
