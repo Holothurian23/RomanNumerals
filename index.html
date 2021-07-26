@@ -9,7 +9,7 @@
     margin:0;
     padding:0;
     width:100%;
-    height:10%;
+    height:100%;
   }
   .container {
     /* min-height: 300px; */
@@ -21,25 +21,25 @@
                          "form form image"
                          "result result image";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr;
   }
   .title-area {
     grid-area: title;
-    height: 40%;
+
   }
   .form-area {
     grid-area: form;
     padding-left: 5em;
-    height: 30%;
+
     padding-bottom: -1em;
   }
   .image-area {
     grid-area: image;
-    height: 60%;
+
   }
   .result-area {
     display: inline-block;
-    height: 40%;
+
 vertical-align: top;
     padding-top: 0em;
     grid-area:result;
@@ -54,14 +54,13 @@ vertical-align: top;
     padding-bottom: 5em;
     margin-top: -0.5em;
     padding-top: 0em;
-    background-image:url("https://pixy.org/src2/639/thumbs350/6399960.jpg");
+    vertical-align: middle;
+    background-image:url("white-marble.jpg");
+    border: 1px solid black;
   }
 
 
-    .roman-title{
-      font-family: "Mate SC";
-      margin-bottom: -0.5em;
-    }
+
     .roman-small{
       font-family: "Mate";
       font-size: 1em;
@@ -89,6 +88,15 @@ vertical-align: top;
       margin-left: 0.5em;
       height: 30em;
     }
+    .engraved {
+      font-family: "Mate SC";
+      font-size: 6em;
+      font-weight: bold;
+      color: #AAA;
+      text-align: center;
+      margin-bottom: -0.5em;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,1);
+   }
 
   </style>
   <script>
@@ -179,12 +187,9 @@ vertical-align: top;
     </div>
     <div class="result-area">
       <div class="marble-area">
-  <br>
-  <br>
-      <h1 id="result" class="roman-title">...</h1>
-
-<br>
-<br>
+      <br>
+      <p id="result" class="engraved">...</p>
+      <br>
       </div>
    </div>
  </div>
