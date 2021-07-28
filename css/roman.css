@@ -1,0 +1,94 @@
+html, body {
+  float: left;
+  background-color: #FFF;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+.container {
+  height: 100%
+  width: 100%;
+  display: grid;
+  grid-template-areas: "title title title"
+                       "form form image"
+                       "result result image";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr;
+}
+.title-area {
+  grid-area: title;
+
+}
+.form-area {
+  grid-area: form;
+  padding-left: 5em;
+
+  padding-bottom: -1em;
+}
+.image-area {
+  grid-area: image;
+
+}
+.result-area {
+  display: inline-block;
+
+  vertical-align: top;
+  padding-top: 0em;
+  grid-area:result;
+  padding-left: 5em;
+
+
+}
+.marble-area {
+  width: 80%;
+  height: 100%
+  min-height: 20em;
+  padding-bottom: 5em;
+  margin-top: -0.5em;
+  padding-top: 0em;
+  vertical-align: middle;
+  background-image:url("../img/white-marble.jpg");
+  border: 1px solid black;
+}
+
+
+
+  .roman-small{
+    font-family: "Mate";
+    font-size: 1em;
+  }
+  h1 {
+    font-family: "Mate SC";
+    font-size: 6em;
+    text-align: center;
+    margin-bottom: -0.5em;
+  }
+  h2 {
+    font-family: "Mate SC";
+    font-size: 3em;
+    text-align: center;
+    margin-top: : 0em;
+  }
+  p {
+    font-family: "Mate";
+    font-size: 1.5em;
+    text-align: left;
+    margin-top: : 0em;
+  }
+  .caesar {
+    float:right;
+    margin-left: 0.5em;
+    max-width: 80%;
+    max-height: 30em;
+
+  }
+  .engraved {
+    font-family: "Mate SC";
+    font-size: 6em;
+    font-weight: bold;
+    color: #AAA;
+    text-align: center;
+    margin-bottom: -0.5em;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,1);
+ }

@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css2?family=Mate&family=Mate+SC&display=swap' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/roman.css">
+  <script src="js/roman.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="title-area">
+      <h1>ASK CAESAR</h1>
+      <h2>Roman Numeral Converter</h2>
+    </div>
+    <div class="image-area">
+      <img class="caesar" src="img/Caesar_Asterix.jpg">
+    </div>
+    <div class="form-area">
+      <p>Enter a whole number between 1 and 3999<sup>*</sup>:</p>
+      <input type="text" name="deciNum" id="askNum" class="roman-small">
+      <button id="submit" class="roman-small" onclick="getNum()">OK</button>
+      <p>*3999 was the Romans' biggest number; <a href="https://www.unrv.com/culture/roman-numerals.php#3999" target="_blank">here</a> is the reason why!</p>
+    </div>
+    <div class="result-area">
+      <div class="marble-area">
+      <br>
+      <p id="result" class="engraved">...</p>
+      <br>
+      </div>
+   </div>
+ </div>
+</body>
+
+</html>
